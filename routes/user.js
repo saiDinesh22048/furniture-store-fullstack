@@ -23,21 +23,10 @@ router
    passport.authenticate("local", { failureRedirect: "/login",failureFlash:true }),userController.login)
 
 router
-  .route("/signup/partner")
-  .get(wrapAsync(userController.signupPartnerForm))
-  .post(wrapAsync(userController.signUpPartner));
-
-router
-  .route("/login/partner")
-  .get(wrapAsync(userController.loginPartnerForm))
-  .post(
-    saveRedirectUrl,
-    passport.authenticate("brand-local", {
-      failureRedirect: "/login/partner",
-      failureFlash: true,
-    }),
-    userController.loginPartner
-  );
+   .route("/login2")
+   .get(wrapAsync(userController.loginForm2))
+   .post(saveredirecturl,
+   passport.authenticate("local", { failureRedirect: "/login2",failureFlash:true }),userController.login2)
 
 router.get("/logout",userController.logout);
 
