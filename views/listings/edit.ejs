@@ -1,0 +1,96 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<h3>Edit Details</h3>
+<form method="POST" action="/listings/<%=listing._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
+    <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1">
+    <div class="mb-3 col-5">
+    <label for="listing[name]" class="form-label">Name</label>
+    <input name="listing[name]" value="<%=listing.name%>" type="text" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter name.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[description]" class="form-label">Description</label>
+    <textarea name="listing[description]" class="form-control"><%=listing.description%></textarea required>
+    <div class="invalid-feedback">
+    Please enter description.
+    </div>
+    </div>
+
+    <div class="mb-3">
+        <p>original listing image</p>
+        <img src="<%= originalimgurl %>"/>
+    </div>
+
+    <div class="mb-3">
+        <label for="listing[image]" class="form-label">Image</label>
+        <input name="listing[image]" type="file" class="form-control">
+        <div class="valid-feedback">
+        Optional.
+    </div>
+    </div>
+
+    <div class="mb-3">
+    <label for="listing[price]" class="form-label">Price</label>
+    <input name="listing[price]" value="<%=listing.price%>" type="number" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter sub price.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[discount]" class="form-label">Discount</label>
+    <input name="listing[discount]" value="<%=listing.discount%>" type="number" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter discount.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[brand]" class="form-label">Brandame</label>
+    <input name="listing[brand]" value="<%=listing.brand%>" type="text" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter sub brand.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[stock_quantity]" class="form-label">Stock quantity</label>
+    <input name="listing[stock_quantity]" value="<%=listing.stock_quantity%>" type="number" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter sub stock quantity.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[category]" class="form-label">Category</label>
+    <input name="listing[category]" value="<%=listing.category%>" type="text" class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter category.
+    </div>
+    </div>
+    
+    <div class="mb-3">
+    <label for="listing[sub_cat]" class="form-label">Sub Category</label>
+    <input name="listing[sub_cat]" value="<%=listing.sub_cat%>" type="text"class="form-control" required>
+    <div class="invalid-feedback">
+    Please enter sub category.
+    </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="listing[location]" class="form-label">location</label>
+        <input name="listing[location]" value="<%=listing.location%>" type="text"class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid Location.
+        </div>
+        </div>
+
+
+    </div>
+    
+    <button class="btn btn-dark edit-btn">Edit</button>
+</form>
+<script src="/js/script.js"></script>
+

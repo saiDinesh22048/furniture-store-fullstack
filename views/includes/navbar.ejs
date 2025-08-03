@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-hammer"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/listings">all furnitures</a>
+        <a class="nav-link" href="/listings/new">add new</a>
+        <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+        <a class="nav-link" href="/listings/request" >Request as Partner</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <div class="ms-auto search-container">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search products, brands, categories..." aria-label="Search" autocomplete="off">
+                </form>
+                <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+        <% if(!currUser){%>
+        <a class="nav-link" aria-current="page" href="/signup">SignUp</a>
+        <a class="nav-link" href="/login">Login</a>
+      
+          
+  
+        <%}%>
+        <% if(currUser) {%>
+        <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+

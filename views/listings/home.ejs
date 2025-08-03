@@ -1,0 +1,367 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<style>
+    
+        .category-card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+        .category-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .signup-modal .modal-content {
+            border-radius: 10px;
+        }
+        .signup-modal .btn-close {
+            background-color: white; /* Dark background for contrast */
+            color: red; /* White icon */
+            opacity: 1; /* Full opacity */
+            padding: 8px; /* Larger clickable area */
+            border-radius: 50%; /* Circular shape */
+        }
+        .signup-modal .btn-close:hover {
+            background-color:red; /* Slightly lighter on hover */
+        }
+
+
+        /* Brands Section Styles */
+        .brands-section {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            overflow: hidden;
+        }
+        .marquee {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        .brand-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 80px;
+            margin: 0 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #333;
+            text-decoration: none;
+            text-decoration-line: none;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        .marquee-wrapper {
+            display: flex;
+            width: 200%; /* Double the content for seamless looping */
+        }
+         #map { height: 700px; width: 60%; }
+
+
+
+        
+         /* Promo Section Styles */
+        .promo-section {
+            padding: 40px 0;
+        }
+        .promo-container {
+            display: flex;
+            gap: 20px;
+        }
+        .promo-image-box, .promo-text-box {
+            width: 50%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .promo-image-box {
+            background-color: #fff;
+        }
+        .promo-text-box {
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        .image-scroll {
+            display: flex;
+            flex-direction: column;
+            animation: imageScroll 12s linear infinite;
+        }
+        .image-scroll img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .text-scroll {
+            display: flex;
+            width: 300%; /* Ensure enough space for all cards */
+            animation: textScroll 12s linear infinite;
+        }
+        .text-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 33.33%; /* Each card takes exactly one-third of the total width */
+            height: 400px;
+            flex-shrink: 0;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .text-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .text-card p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        @keyframes imageScroll {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(0); } /* Pause at first image */
+            33.33% { transform: translateY(-400px); }
+            58.33% { transform: translateY(-400px); } /* Pause at second image */
+            66.67% { transform: translateY(-800px); }
+            91.67% { transform: translateY(-800px); } /* Pause at third image */
+            100% { transform: translateY(0); } /* Reset to start */
+        }
+        @keyframes textScroll {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(0); } /* Pause at first text */
+            33.33% { transform: translateX(-33.33%); }
+            58.33% { transform: translateX(-33.33%); } /* Pause at second text */
+            66.67% { transform: translateX(-66.66%); }
+            91.67% { transform: translateX(-66.66%); } /* Pause at third text */
+            100% { transform: translateX(0); } /* Reset to start */
+        }
+
+
+       
+    </style>
+<div>
+<!-- Promo Section -->
+    <section class="promo-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Exclusive Offers</h2>
+            <div class="promo-container">
+                <!-- Image Box (Top to Bottom) -->
+                <div class="promo-image-box">
+                    <div class="image-scroll">
+                        <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159325/sofasfree_oyi5ep.jpg" alt="Sofa Discount">
+                        <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159318/bedsfree_aano6m.jpg" alt="Bed Offer">
+                        <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159307/chairsfree_prhpp4.jpg" alt="Chair Deal">
+                    </div>
+                </div>
+                <!-- Text Box (Right to Left) -->
+                <div class="promo-text-box">
+                    <div class="text-scroll">
+                        <div class="text-card">
+                            <h3>50% Off Sofas</h3>
+                            <p>Get cozy with our premium sofas at half price.<br>Perfect for your living room upgrade!</p>
+                        </div>
+                        <div class="text-card">
+                            <h3>Free Shipping on Beds</h3>
+                            <p>Enjoy free shipping on all bed purchases.<br>Limited time offer, don't miss out!</p>
+                        </div>
+                        <div class="text-card">
+                            <h3>Buy 1 Get 1 Chair</h3>
+                            <p>Buy one chair and get another free.<br>Ideal for refreshing your home decor!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="container my-3">
+        <h2 class="text-center mb-4">Shop by Category</h2>
+        <div class="row g-3">
+            <!-- Category 1: Sofas -->
+            <div class="col-md-3 col-sm-4">
+                <div class="category-card text-center">
+                    <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159325/sofasfree_oyi5ep.jpg" class="category-image" alt="Sofas">
+                    <div class="p-3">
+                        <h3 class="category-title">Sofas</h3>
+                        <p>Comfortable and stylish sofas for your living room.</p>
+                        <a href="category/Sofas" class="btn btn-primary">Explore Sofas</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Category 2: Beds -->
+            <div class="col-md-3 col-sm-4">
+                <div class="category-card text-center">
+                    <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159318/bedsfree_aano6m.jpg" class="category-image" alt="Beds">
+                    <div class="p-3">
+                        <h3 class="category-title">Beds</h3>
+                        <p>Cozy beds for a perfect night's sleep.</p>
+                        <br>
+                        <a href="category/Beds" class="btn btn-primary">Explore Beds</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Category 3: Dining Tables -->
+            <div class="col-md-3 col-sm-4">
+                <div class="category-card text-center">
+                    <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159312/diningtablesfree_htvttw.jpg" class="category-image" alt="Dining Tables">
+                    <div class="p-3">
+                        <h3 class="category-title">Dining Tables</h3>
+                        <p>Elegant dining tables for family gatherings.</p>
+                        <a href="category/Tables" class="btn btn-primary">Explore Dining Tables</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Category 4: Chairs -->
+            <div class="col-md-3 col-sm-4">
+                <div class="category-card text-center">
+                    <img src="https://res.cloudinary.com/dzgiw56qg/image/upload/v1750159307/chairsfree_prhpp4.jpg" class="category-image" alt="Chairs">
+                    <div class="p-3">
+                        <h3 class="category-title">Chairs</h3>
+                        <p>Stylish and ergonomic chairs for every room.</p>
+                        <a href="category/Chairs" class="btn btn-primary">Explore Chairs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Trusted Brands</h2>
+            <div class="marquee-wrapper">
+            
+                <div class="marquee">
+                <% for(brand of brands){ %>
+                    <!-- Repeated brand boxes for seamless scrolling -->
+                    <a href="/brand/<%= brand %>"><div class="brand-box" ><%= brand %></div></a>
+                <% } %>
+                <% for(brand of brands){ %>
+                    <!-- Duplicate brand boxes for continuous loop -->
+                     <a href="/brand/<%= brand %>"><div class="brand-box" ><%= brand %></div></a>
+                <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+ <%if(!currUser) {%>
+    <!-- Signup Modal -->
+    <div class="modal fade signup-modal" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h3 class="mb-3">Join Our Furniture Store</h3>
+                    <p>Sign up to get exclusive offers and updates!</p>
+                    <form action="/signup" method="post"  novalidate class="needs-validation">
+                        <div class="mb-3">
+                            <input name="username" id="username" type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="invalid-feedback">
+                        Enter valid userame.
+                        </div>
+                        <div class="mb-3">
+                            <input name="email" id="email" type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="invalid-feedback">
+                        Enter valid email.
+                        </div>
+                        <div class="mb-3">
+                            <input name="password" id="password" type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="invalid-feedback">
+                        Enter valid password.
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                    </form>
+                    <br>
+                        <a href="/login"><button type="submit" class="btn btn-success w-100">Login</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+    <!-- Bootstrap JS and Custom Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show modal after 3 seconds
+            setTimeout(function () {
+                var signupModal = new bootstrap.Modal(document.getElementById('signupModal'), {
+                    keyboard: true
+                });
+                signupModal.show();
+            }, 3000);
+        });
+    </script>
+
+<div class="col-8 offset-4 mb-3">
+<h2>partners Locations across indea</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([20.5937, 78.9629], 5); // Center on India
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18
+  }).addTo(map);
+
+
+  const listings = <%- JSON.stringify(alllistings) %>;
+  
+  // Track unique coordinates to avoid duplicate markers
+  const uniqueLocations = new Set();
+
+  listings.forEach(listing => {
+    if (
+      listing.coordinates&&listing.coordinates[0]&&listing.coordinates[1]
+    ) {
+      const key = `${listing.coordinates[0]},${listing.coordinates[1]}`;
+
+      if (!uniqueLocations.has(key)) {
+        uniqueLocations.add(key);
+
+        const marker = L.marker(listing.coordinates).addTo(map);
+       marker.bindTooltip(`<strong>${listing.brand}</strong>`, {
+        permanent: true,   
+        direction: 'top',  
+        offset: [0, -10] 
+        }).openTooltip();
+            }
+    }
+  });
+</script>
+</div>
+</div>
+
+
+ 

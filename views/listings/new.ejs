@@ -1,0 +1,97 @@
+<% layout("/layouts/boilerplate.ejs")%>
+    <h3>all furnitures</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+         <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1">
+        <div class="mb-3 col-5">
+        <label for="listing[name]" class="form-label">Name</label>
+        <input name="listing[name]" placeholder="enter name" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid name.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[description]" class="form-label">Description</label>
+        <textarea name="listing[description]" placeholder="enter title" class="form-control" required></textarea>
+        <div class="invalid-feedback">
+        Enter valid name.
+        </div>
+        </div>
+
+        <div class="mb-3">
+        <label for="listing[image]" class="form-label">Image</label>
+        <input name="listing[image]" type="file" class="form-control" required>
+        <div class="invalid-feedback">
+        upload a image
+        </div>
+        </div>
+<!--     
+        <div class="mb-3">
+        <label for="listing[image_url]" class="form-label">Image Url</label>
+        <input name="listing[image_url]" placeholder="enter url" type="text" class="form-control">
+        <div class="valid-feedback">
+        Optional.
+        </div>
+        </div> -->
+    
+        <div class="mb-3">
+        <label for="listing[price]" class="form-label">Price</label>
+        <input name="listing[price]" placeholder="enter price" type="number" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid price.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[discount]" class="form-label">Discount</label>
+        <input name="listing[discount]" placeholder="enter discount" type="number" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid discount.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[brand]" class="form-label">Brandame</label>
+        <input name="listing[brand]" placeholder="enter brand" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid brand.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[stock_quantity]" class="form-label">Stock quantity</label>
+        <input name="listing[stock_quantity]" placeholder="enter stock quantity" type="number" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid stock quantity.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[category]" class="form-label">Category</label>
+        <input name="listing[category]" placeholder="enter scategory" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid category.
+        </div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="listing[sub_cat]" class="form-label">Sub Category</label>
+        <input name="listing[sub_cat]" placeholder="enter sub_category" type="text"class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid Sub category.
+        </div>
+        </div>
+
+        <div class="mb-3">
+        <label for="listing[location]" class="form-label">location</label>
+        <input name="listing[location]" placeholder="enter location" type="text"class="form-control" required>
+        <div class="invalid-feedback">
+        Enter valid Location.
+        </div>
+        </div>
+
+
+        </div>
+        
+        <button class="btn btn-dark add-btn">Add</button>
+    </form>
