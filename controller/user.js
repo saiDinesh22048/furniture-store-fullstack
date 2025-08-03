@@ -6,20 +6,9 @@ module.exports.signupForm =async (req,res)=>{
 
 
 module.exports.signUp = async (req,res)=>{
-//   try {let {username,email,password}=req.body;
-   // let newuser= new ({email,username});
-   // const reguser=await user.register(newuser,password);
-   // let redirecturl= res.locals.redirecturl || "/listings"
-   // req.login(reguser,(err)=>{
-   //    if(err){
-   //       return next(err);
-   //    }
-   // req.flash("success","registered successfully")
-   // res.redirect(redirecturl);
-   // })
-   try {let {username,email,password}=req.body;
-   let newuser= new Brands({email,username});
-   const reguser=await Brands.register(newuser,password);
+  try {let {username,email,password}=req.body;
+   let newuser= new ({email,username});
+   const reguser=await user.register(newuser,password);
    let redirecturl= res.locals.redirecturl || "/listings"
    req.login(reguser,(err)=>{
       if(err){
@@ -28,6 +17,17 @@ module.exports.signUp = async (req,res)=>{
    req.flash("success","registered successfully")
    res.redirect(redirecturl);
    })
+//    try {let {username,email,password}=req.body;
+//    let newuser= new Brands({email,username});
+//    const reguser=await Brands.register(newuser,password);
+//    let redirecturl= res.locals.redirecturl || "/listings"
+//    req.login(reguser,(err)=>{
+//       if(err){
+//          return next(err);
+//       }
+//    req.flash("success","registered successfully")
+//    res.redirect(redirecturl);
+//    })
    
 }catch(e){
     req.flash("error",e.message);
@@ -67,4 +67,5 @@ module.exports.logout =  (req,res,next)=>{
         res.redirect("/listings");
         });
     
+
 }
